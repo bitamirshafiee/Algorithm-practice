@@ -25,14 +25,15 @@ class LinkedList<T> {
         return this
     }
 
-    fun append(value: T) {
+    fun append(value: T) : LinkedList<T> {
         if (isEmpty()) {
             push(value)
-            return
+            return this
         }
         tail?.next = Node(value = value)
         tail = tail?.next
 
         size++
+        return this
     }
 }

@@ -25,9 +25,7 @@ fun main(args: Array<String>) {
     "append" example {
         val list = LinkedList<Int>()
 
-        list.append(1)
-        list.append(2)
-        list.append(3)
+        list.append(1).append(2).append(3)
 
         println(list)
     }
