@@ -1,5 +1,7 @@
+import linkedlist.LinkedList
+import linkedlist.Node
+
 fun main(args: Array<String>) {
-    println("Hello World!")
 
     "Creating and linking nodes" example {
         val node1 = Node(value = 1)
@@ -11,7 +13,14 @@ fun main(args: Array<String>) {
 
         println(node1)
     }
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+
+    "Push" example {
+        val list = LinkedList<Int>()
+
+        list.push(3)
+        list.push(2)
+        list.push(1)
+
+        println(list)
+    }
 }
