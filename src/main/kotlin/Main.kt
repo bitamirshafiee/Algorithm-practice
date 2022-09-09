@@ -14,12 +14,13 @@ fun main(args: Array<String>) {
         println(node1)
     }
 
-    "Push" example {
+    "fluent interface Push" example {
         val list = LinkedList<Int>()
 
-        list.push(3)
-        list.push(2)
-        list.push(1)
+        list.push(3).push(2).push(1)
+
+        println(list)
+    }
 
         println(list)
     }

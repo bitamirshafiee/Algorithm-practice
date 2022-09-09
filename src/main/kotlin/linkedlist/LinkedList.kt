@@ -16,11 +16,13 @@ class LinkedList<T> {
         }
     }
 
-    fun push(value : T){
+    fun push(value: T): LinkedList<T> {
         head = Node(value = value, next = head)
-        if (tail == null){
+        if (tail == null) {
             tail = head
         }
         size++
+        return this
+    }
     }
 }
