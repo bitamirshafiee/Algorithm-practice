@@ -22,6 +22,13 @@ fun main(args: Array<String>) {
         println(list)
     }
 
+    "append" example {
+        val list = LinkedList<Int>()
+
+        list.append(1)
+        list.append(2)
+        list.append(3)
+
         println(list)
     }
 }
