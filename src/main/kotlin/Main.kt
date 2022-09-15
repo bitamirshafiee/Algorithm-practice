@@ -56,4 +56,15 @@ fun main(args: Array<String>) {
         println("popped value: $poppedValue")
 
     }
+
+    "removing the last node" example {
+        val list = LinkedList<Int>()
+        list.push(3).push(2).push(1)
+
+        println("Before removing the last node: $list")
+        val removedValue = list.removeLast()
+
+        println("After removing last node: $list")
+        println("Removed value: $removedValue")
+    }
 }

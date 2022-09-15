@@ -69,4 +69,23 @@ class LinkedList<T> {
         if (isEmpty()) tail = null
         return result
     }
+
+    fun removeLast() : T?{
+        val head = head ?: return null
+        if (head.next == null) pop()
+        size--
+        var prev = head
+        var current = head
+
+        var next = current.next
+        while (next != null){
+            prev = current
+            current = next
+            next = current.next
+        }
+        prev.next = null
+        tail = prev
+
+        return current.value
+    }
 }
