@@ -80,4 +80,17 @@ fun main(args: Array<String>) {
         println("After removing at index $index: $list")
         println("Removed value: $removedValue")
     }
+
+    "printing doubles " example {
+        val list = LinkedList<Int>()
+        list.push(4).push(3).push(2).push(1)
+
+        println(list)
+
+        for(item in list){
+            println("Double = ${item * 2}")
+        }
+    }
+
+
 }

@@ -1,10 +1,11 @@
 package linkedlist
 
-class LinkedList<T> {
+class LinkedList<T> : Iterable<T> {
     private var head: Node<T>? = null
     private var tail: Node<T>? = null
 
-    private var size = 0
+    var size = 0
+        private set
 
     fun isEmpty() = size == 0
 
@@ -92,14 +93,35 @@ class LinkedList<T> {
     fun removeAfter(node: Node<T>): T? {
         val result = node.next?.value
 
-        if (node.next == tail){
+        if (node.next == tail) {
             tail = node
         }
 
-        if (node.next != null)
-            size--
+        if (node.next != null) size--
 
         node.next = node.next?.next
         return result
     }
+
+    override fun iterator(): Iterator<T> {
+        return LinkedListIterator(this)
+    }
+}
+
+class LinkedListIterator<T>(private val list: LinkedList<T>) : Iterator<T> {
+    private var index = 0
+    private var lastNode: Node<T>? = null
+
+    override fun hasNext(): Boolean {
+        return index < list.size
+    }
+
+    override fun next(): T {
+        if (index >= list.size) throw java.lang.IndexOutOfBoundsException()
+
+        lastNode = if (index == 0) list.nodeAt(0) else lastNode?.next
+        index++
+        return lastNode!!.value
+    }
+
 }
