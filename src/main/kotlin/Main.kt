@@ -43,4 +43,17 @@ fun main(args: Array<String>) {
         }
         print("After inserting : $list")
     }
+
+    "pop" example {
+        val list = LinkedList<Int>()
+        list.push(3).push(2).push(1)
+
+        println("Before popping list: $list")
+
+        val poppedValue = list.pop()
+
+        println("After popping list: $list")
+        println("popped value: $poppedValue")
+
+    }
 }
