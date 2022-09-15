@@ -38,8 +38,8 @@ fun main(args: Array<String>) {
 
         var middleNode = list.nodeAt(1)!!
 
-        for (index in 1..3){
-            middleNode = list.insert(-1 * index , middleNode)
+        for (index in 1..3) {
+            middleNode = list.insert(-1 * index, middleNode)
         }
         print("After inserting : $list")
     }
@@ -65,6 +65,19 @@ fun main(args: Array<String>) {
         val removedValue = list.removeLast()
 
         println("After removing last node: $list")
+        println("Removed value: $removedValue")
+    }
+
+    "removing a node after a particular node " example {
+        val list = LinkedList<Int>()
+        list.push(4).push(3).push(2).push(1)
+
+        println("Before removing at a particular index: $list")
+        val index = 2
+        val node = list.nodeAt(index - 1)!!
+        val removedValue = list.removeAfter(node)
+
+        println("After removing at index $index: $list")
         println("Removed value: $removedValue")
     }
 }

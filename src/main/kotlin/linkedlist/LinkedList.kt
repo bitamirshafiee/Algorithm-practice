@@ -70,7 +70,7 @@ class LinkedList<T> {
         return result
     }
 
-    fun removeLast() : T?{
+    fun removeLast(): T? {
         val head = head ?: return null
         if (head.next == null) pop()
         size--
@@ -78,7 +78,7 @@ class LinkedList<T> {
         var current = head
 
         var next = current.next
-        while (next != null){
+        while (next != null) {
             prev = current
             current = next
             next = current.next
@@ -87,5 +87,19 @@ class LinkedList<T> {
         tail = prev
 
         return current.value
+    }
+
+    fun removeAfter(node: Node<T>): T? {
+        val result = node.next?.value
+
+        if (node.next == tail){
+            tail = node
+        }
+
+        if (node.next != null)
+            size--
+
+        node.next = node.next?.next
+        return result
     }
 }
